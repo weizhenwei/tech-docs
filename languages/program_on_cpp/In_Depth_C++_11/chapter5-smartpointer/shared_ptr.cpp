@@ -40,11 +40,24 @@ static void test_shared() {
     cout << "The winner is " << *pwin << endl;
 }
 
+class A : public std::enable_shared_from_this<A> {
+public:
+    A() { cout << "A::A() constructor" << endl; }
+    ~A() { cout << "A::~A() destructor" << endl; }
+
+    std::shared_ptr<A> GetSelf() {
+        return shared_from_this();
+    }
+};
+
 int main() {
     test_unique();
     test_shared();
 
+    std::shared_ptr<A> pA(new A);
+    std::shared_ptr<A> pB = pA->GetSelf();
+    std::shared_ptr<A> pC = std::make_shared<A>();
+
     return 0;
 }
-
 
