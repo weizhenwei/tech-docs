@@ -19,7 +19,7 @@ struct Complicated {
 
     Complicated(const Complicated& other) : year(other.year),
     country(other.country), name(std::move(other.name)) {
-        std::cout << "is moved" << std::endl;
+        std::cout << "is copy constructed" << std::endl;
     }
 };
 
@@ -39,6 +39,10 @@ int main() {
     v.emplace_back(anInt, aDouble, aString);
     std::cout << "--push_back--" << std::endl;
     v.push_back(Complicated(anInt, aDouble, aString));
+
+    std::cout << "--copy constructor--" << std::endl;
+    Complicated c(5, 5.5, "C++ 11");
+    v.emplace_back(c);
 
     return 0;
 }
