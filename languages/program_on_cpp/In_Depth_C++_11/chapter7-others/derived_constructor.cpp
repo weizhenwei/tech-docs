@@ -35,7 +35,7 @@ struct Derived2 : Base {
     using Base::Base;
 };
 
-int main(int argc, char *argv[]) {
+int main(void) {
     int i = 1;
     int j = 2;
     std::string str = "Hello, c++11";
