@@ -34,9 +34,10 @@ int main(void) {
     int a = c.Get();
     std::cout << a << std::endl;
 
-    // TODO(weizhenwei): how to do this?
-    // SimpleFunction<std::add_pointer<void(void*)>::type> f(foo);
-    // f.Run();
+    // SimpleFunction<decltype(foo)> f(foo);
+    using FN = decltype(foo);
+    SimpleFunction<FN> f(foo);
+    f.Run();
 
     return 0;
 }
