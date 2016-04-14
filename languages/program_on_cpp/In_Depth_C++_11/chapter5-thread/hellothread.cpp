@@ -7,8 +7,8 @@
 #include <thread>
 
 void thread_task() {
+    // std::this_thread::sleep_for(std::chrono::seconds(5));
     std::cout<< "hello, c++11 thread!" << std::endl;
-    std::this_thread::sleep_for(std::chrono::seconds(3));
 }
 
 int main() {
@@ -16,7 +16,11 @@ int main() {
     // t.join();
     t.detach();
 
+
+    std::this_thread::sleep_for(std::chrono::seconds(5));
     std::cout<< "hello, main thread!" << std::endl;
+    std::cout << "Current thread_id:" << t.get_id() << std::endl;
+    std::cout << "Hardware CPU numbers:" << std::thread::hardware_concurrency() << std::endl;
 
     return 0;
 }
