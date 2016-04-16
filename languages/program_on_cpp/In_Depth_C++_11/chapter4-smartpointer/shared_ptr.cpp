@@ -50,6 +50,14 @@ public:
     }
 };
 
+void test_reset() {
+    int *p = new int(1);
+    std::shared_ptr<int> pInt = nullptr;
+    pInt.reset(p);
+
+    printf("i = %d\n", *pInt);
+}
+
 int main() {
     test_unique();
     test_shared();
@@ -57,6 +65,8 @@ int main() {
     std::shared_ptr<A> pA(new A);
     std::shared_ptr<A> pB = pA->GetSelf();
     std::shared_ptr<A> pC = std::make_shared<A>();
+
+    test_reset();
 
     return 0;
 }
