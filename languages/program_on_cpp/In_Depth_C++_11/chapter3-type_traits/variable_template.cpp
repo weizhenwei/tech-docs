@@ -12,6 +12,7 @@ void print(T head, Args... args) {
 
 int main(void) {
     print(1, 2, 3, 4);
+    print(1, 2, 3, 4, 5);
 
     return 0;
 }
