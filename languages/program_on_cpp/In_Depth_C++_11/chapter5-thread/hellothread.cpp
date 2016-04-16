@@ -8,7 +8,6 @@
 
 void thread_task() {
     std::cout<< "hello, c++11 thread!" << std::endl;
-    std::cout<< "I am so fucking tired!" << std::endl;
     std::this_thread::sleep_for(std::chrono::seconds(2));
 }
 
