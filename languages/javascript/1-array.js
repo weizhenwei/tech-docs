@@ -32,4 +32,16 @@ var long_str = newarr.join('-');
 console.log(long_str);
 
 
+for (var i = 0; i < newarr.length; i++) {
+    console.log("newarr[%d] = %d", i, newarr[i]);
+}
+
+console.log("*******************After shitf*********************************");
+newarr.shift();
+newarr.shift();
+for (var i = 0; i < newarr.length; i++) {
+    console.log("newarr[%d] = %d", i, newarr[i]);
+}
+
+
 
