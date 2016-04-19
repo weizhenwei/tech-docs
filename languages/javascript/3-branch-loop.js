@@ -35,4 +35,16 @@ do {
 } while (i < 200);
 console.log(x);
 
+while (i < 300) {
+    if (i % 2 == 0) {
+        i++;
+        continue;
+    } else {
+        x += i;
+        i++;
+    }
+}
+console.log(x);
+
+
 
