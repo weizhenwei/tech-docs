@@ -10,10 +10,33 @@ function* foo(x) {
     yield x + 5;
 }
 
-var f = foo(5);
 
-console.log(f.next());
-console.log(f.next());
-console.log(f.next());
-console.log(f.next());
+// method 1: use next() function to iterate;
+var f = foo(5);
+var obj = f.next();
+while (obj.done != true) {
+    console.log(obj.value);
+    obj = f.next();
+}
+
+// method 2: use of to iterate;
+for (var x of foo(15)) {
+    console.log(x);
+}
+
+
+
+// generate_id
+function* next_id() {
+    var i = 0;
+    while (i++ < 65535) {
+        yield i;
+    }
+}
+
+var obj2 = next_id();
+console.log(obj2.next());
+console.log(obj2.next());
+console.log(obj2.next());
+console.log(obj2.next());
 
