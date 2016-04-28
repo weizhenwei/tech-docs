@@ -13,9 +13,7 @@ var xiaoming = {
 xiaoming.__proto__ = Student;
 console.log(xiaoming.name);
 console.log(xiaoming.height);
-console.log(xiaoming.run());
-console.log("hehe");
-
+xiaoming.run();
 
 // use Object.create() instead of __proto__ assignment;
 function createStudent(name) {
