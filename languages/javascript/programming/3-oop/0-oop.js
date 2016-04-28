@@ -7,15 +7,26 @@ var Student = {
     }
 };
 
-function createStudent(name) { // 基于Student原型创建一个新对象:
+var xiaoming = {
+    name: "xiaoming"
+};
+xiaoming.__proto__ = Student;
+console.log(xiaoming.name);
+console.log(xiaoming.height);
+console.log(xiaoming.run());
+console.log("hehe");
+
+
+// use Object.create() instead of __proto__ assignment;
+function createStudent(name) {
     var s = Object.create(Student);
     // 初始化新对象:
     s.name = name;
     return s;
 }
 
-var xiaoming = createStudent('小明');
-xiaoming.run(); // 小明 is running...
-console.log("Is Xiaoming tudent:" + (xiaoming.__proto__ === Student)); // true
+var xiaoming2 = createStudent('小明');
+xiaoming2.run(); // 小明 is running...
+console.log("Is Xiaoming tudent:" + (xiaoming2.__proto__ === Student)); // true
 
 
