@@ -13,5 +13,16 @@ console.log(re.lastIndex);  // 29
 console.log(re.exec(s));  // ['ECMAScript']
 console.log(re.lastIndex);  // 44
 
-console.log(re.exec(s));  // null，直到结束仍没有匹配到
+
+var reg2  = new RegExp('ABC\\-001', 'g');
+var s2 = "ABC-001ABC-001sdfsdfABC-001sd";
+console.log(reg2.exec(s2));
+console.log(reg2.lastIndex);
+console.log(reg2.exec(s2));
+console.log(reg2.lastIndex);
+console.log(reg2.exec(s2));
+console.log(reg2.lastIndex);
+console.log(reg2.test(s2));
+console.log(reg2.test(s));
+
 
