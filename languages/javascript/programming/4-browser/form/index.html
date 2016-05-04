@@ -1,0 +1,49 @@
+<html>
+<head>
+<title> Hello, Javascript! </title>
+</head>
+
+<body>
+<!--
+<input type='text' id='email'>
+<script type='text/javascript'>
+var input = document.getElementById('email');
+input.value = "test@test.com";
+alert(input.value);
+</script>
+
+<form id='test-form'>
+<input type='text' name='test'>
+<button type='button' onclick="doSubmitForm()">Submit</button>
+</form>
+
+<script>
+function doSubmitForm() {
+    var form = document.getElementById('test-form');
+    alert('good');
+    form.submit();
+}
+</script>
+-->
+
+<form id='login-form' method='post' onsubmit='return checkForm()'>
+<input type='text' id='username' name='username'>
+<input type='password' id='input-password'>
+<input type='hidden' id='md5-password' name='password'>
+<button type='submit'>Submit</button>
+</form>
+
+<script>
+function checkForm() {
+    var iput-pw = document.getElementById('input-password');
+    var md5-pw = document.getElementById('md5-password');
+    md5-pw.value = input-pw;
+    alert(md5-pw);
+    return true;
+}
+</script>
+
+</body>
+
+</html>
+
