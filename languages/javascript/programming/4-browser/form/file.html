@@ -1,0 +1,26 @@
+<html>
+<head>
+<title> Hello, Javascript! </title>
+</head>
+
+<body>
+<!--<script>
+alert("Hello, world!");
+</script>
+-->
+
+<input type='file' id='test-file-upload'>
+
+<script>
+var f = document.getElementById("test-file-upload");
+var filename = f.value;
+if (!filename || !(filename.endsWith('.png') || filename.endsWith('.jpg'))) {
+    alert('can only upload image file');
+    return false;
+}
+</script>
+
+</body>
+
+</html>
+
